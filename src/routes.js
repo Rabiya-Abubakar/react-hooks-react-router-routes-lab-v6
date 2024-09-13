@@ -1,4 +1,3 @@
-// src/routes.js
 import Home from "./pages/Home";
 import Actors from "./pages/Actors";
 import Directors from "./pages/Directors";
@@ -9,7 +8,7 @@ const routes = [
   {
     path: "/",
     element: <Home />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />, // Handles errors within route elements
   },
   {
     path: "/actors",
@@ -22,6 +21,11 @@ const routes = [
   {
     path: "/movie/:id",
     element: <Movie />,
+  },
+  // Catch-all route for undefined paths
+  {
+    path: "*",
+    element: <ErrorPage />, // This will render ErrorPage for any non-matching routes
   },
 ];
 
